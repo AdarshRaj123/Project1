@@ -2,7 +2,6 @@ package handler
 
 import (
 	"Project1/utils"
-	"fmt"
 	"net/http"
 	"sort"
 	"strings"
@@ -20,7 +19,7 @@ func (p WordCountList) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
 func (p WordCountList) Less(i, j int) bool { return p[i].Count > p[j].Count }
 
 func CountWords(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("hihohohohohoh")
+
 	body := struct {
 		Text string `json :"text"`
 	}{}
