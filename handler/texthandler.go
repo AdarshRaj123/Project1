@@ -46,5 +46,10 @@ func CountWords(w http.ResponseWriter, r *http.Request) {
 	}
 
 	sort.Sort(p)
-	utils.RespondJSON(w, http.StatusOK, p[0:11])
+
+	count := len(words)
+	if count > 10 {
+		count = 10
+	}
+	utils.RespondJSON(w, http.StatusOK, p[0:count])
 }
