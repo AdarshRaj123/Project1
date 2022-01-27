@@ -9,7 +9,4 @@ times of occurrence in the text .
  created a server listening to port 3000
  created a route that accepts the text and responds the top ten word counts
  
-#Input
-JSON
-#Response
-JSON
+
