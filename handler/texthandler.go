@@ -8,16 +8,16 @@ import (
 	"strings"
 )
 
-type Pair struct {
+type Word struct {
 	Word  string
 	Count int
 }
 
-type PairList []Pair
+type WordCountList []Word
 
-func (p PairList) Len() int           { return len(p) }
-func (p PairList) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
-func (p PairList) Less(i, j int) bool { return p[i].Count > p[j].Count }
+func (p WordCountList) Len() int           { return len(p) }
+func (p WordCountList) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+func (p WordCountList) Less(i, j int) bool { return p[i].Count > p[j].Count }
 
 func CountWords(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("hihohohohohoh")
@@ -38,11 +38,11 @@ func CountWords(w http.ResponseWriter, r *http.Request) {
 	for _, field := range fields {
 		words[strings.ToLower(field)]++
 	}
-	p := make(PairList, len(words))
+	p := make(WordCountList, len(words))
 
 	i := 0
 	for k, v := range words {
-		p[i] = Pair{k, v}
+		p[i] = Word{k, v}
 		i++
 	}
 

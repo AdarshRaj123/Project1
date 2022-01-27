@@ -9,5 +9,5 @@ import (
 func main() {
 	router := chi.NewRouter()
 	router.Post("/text", handler.CountWords)
-	http.ListenAndServe(":8080", router)
+	http.ListenAndServe(":3000", router)
 }
